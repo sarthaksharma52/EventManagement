@@ -1,71 +1,76 @@
-Centralized College Event Management System
+# Centralized College Event Management System
 
-Description
+**The Centralized College Event Management System** is a MERN stack application built to streamline event management within a college. It allows college clubs to apply for hosting events, faculty members to approve them hierarchically, and students to browse, register, and pay for events.
 
-The Centralized College Event Management System is a web application built using the MERN stack (MongoDB, Express.js, React.js, Node.js). It streamlines the process of organizing and managing events within a college. The system allows college clubs to apply for event hosting, undergo hierarchical approval from faculty members, and enable students to view, register, and pay for events online.
+## Features
 
-Features
+- **Club Event Applications**: College clubs can propose events for approval.
+- **Hierarchical Approval System**: Events go through multiple approval stages (Club Coordinator → Club Director → Higher Authorities).
+- **Event Listing**: Students can browse ongoing and upcoming events.
+- **Event Registration**: Students can register for events and make online payments.
+- **Admin Dashboard**: Faculty members can review, approve, or reject event proposals.
 
-Club Event Applications: College clubs can propose events for approval.
+## Technologies Used
 
-Hierarchical Approval System: Events go through multiple approval stages (Club Coordinator → Club Director → Higher Authorities).
+- **Frontend**: React.js (Vite)
+- **Backend**: Node.js, Express.js
+- **Database**: MongoDB
+- **Authentication**: JWT (JSON Web Token)
+- **Payment Gateway**: (To be integrated - Stripe/Razorpay/etc.)
+- **State Management**: Redux (Optional)
 
-Event Listing: Students can browse ongoing and upcoming events.
+## Installation
 
-Event Registration: Students can register for events and make online payments.
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+   cd event-management
+   ```
 
-Admin Dashboard: Faculty members can review, approve, or reject event proposals.
+2. Install dependencies:
+   ```bash
+   # For backend
+   cd backend
+   npm install
 
-Tech Stack
-Frontend: React.js (Vite)
+   # For frontend
+   cd ../frontend
+   npm install
+   ```
 
-Backend: Node.js, Express.js
+3. Set up environment variables:
+   - Create a `.env` file in the `backend` directory with the following:
+     ```env
+     MONGO_URI=<your_mongodb_connection_string>
+     JWT_SECRET=<your_jwt_secret>
+     PAYMENT_GATEWAY_KEY=<your_payment_key>
+     PORT=5000
+     ```
 
-Database: MongoDB
+4. Start the application:
+   ```bash
+   # Start the backend
+   cd backend
+   npm start
 
-Authentication: JWT (JSON Web Token)
+   # Start the frontend
+   cd ../frontend
+   npm start
+   ```
 
-Payment Gateway: (To be integrated - Stripe/Razorpay/etc.)
+5. Open the app in your browser at `http://localhost:3000`.
 
-State Management: Redux (Optional)
+## Folder Structure
 
-Installation & Setup
-Prerequisites
-Ensure you have the following installed:
+- `backend/`: Contains the server-side code, API routes, and database models.
+- `frontend/`: Contains the client-side application built with React.js.
 
-Node.js
+## Future Enhancements
 
-MongoDB (Local or Atlas)
+- **Automated Notification System** (Email/SMS alerts)
+- **Event Analytics Dashboard**
+- **QR Code-based Check-in System**
 
-Backend Setup
-  cd backend
-  npm install
-  npm start
-  
-Frontend Setup
-  cd frontend
-  npm install
-  npm run dev
-  
-Environment Variables
-  Create a .env file in the root of the backend with the following:
-
-MONGO_URI=<your-mongodb-connection-string>
-JWT_SECRET=<your-jwt-secret>
-PAYMENT_GATEWAY_KEY=<your-payment-key>
-
-Usage
-
-1.Clubs submit event proposals.
-2.Faculty members review and approve/reject proposals hierarchically.
-3.Approved events are listed for students to view.
-4.Students register and pay for events.
-
-
-Future Enhancements
-  1.Automated Notification System (Email/SMS alerts)
-  2.Event Analytics Dashboard
-  3.QR Code-based Check-in System
-
-License
+## License
 MIT License
+
