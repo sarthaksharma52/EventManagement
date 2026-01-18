@@ -35,7 +35,24 @@ export default router;
 
 
 
+import express from "express";
+import {
+  registerUser,
+  loginUser,
+  getUserProfile,
+} from "../controllers/userController.js";
+import { protect } from "../middleware/authMiddleware.js";
 
+const router = express.Router();
+
+/* Auth routes */
+router.post("/register", registerUser);
+router.post("/login", loginUser);
+
+/* Protected route */
+router.get("/profile", protect, getUserProfile);
+
+export default router;
 
 
 
@@ -70,3 +87,4 @@ router.post("/login", loginUser);
 router.get("/profile", protect, getUserProfile);
 
 export default router;
+
